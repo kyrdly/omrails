@@ -7,6 +7,7 @@ gem 'devise'
 gem 'simple_form'
 gem "paperclip", "~> 3.5.1"
 gem "aws-sdk"
+gem 'faker', '1.1.2'
 
 group :production do
 	gem 'pg'
