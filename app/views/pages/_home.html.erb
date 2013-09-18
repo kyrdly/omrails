@@ -1,15 +1,15 @@
  <% if user_signed_in? %>
  
  <% else %>
-	 <div class="hero-unit">
-	 <h1>Welcome to One Month Rails!</h1>
+	 <div class="page-header">
+	 <h1>Welcome to Yupp!</h1>
 	<p>
-		You've found the home page for the
-		<%= link_to "One Month Rails", "http://onemonthrails.com" %>
-		application.
+		A place for 
+		<%= link_to("ideas", "http://bit.ly/c8kIOl" , :target => '_blank') %>
+		to grow.
 	 </p>
 	<p>
-		<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large"%>
+		<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-large"%>
 	</p>
 </div>
 <% end %> 
