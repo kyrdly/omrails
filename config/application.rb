@@ -61,5 +61,7 @@ module Omrails
     config.assets.version = '1.0'
     # Required for Devise on Heroku 
     config.assets.initialize_on_precompile = false
+    # In production :host should be set to the actual host of your application.
+    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   end
 end
