@@ -10,6 +10,7 @@ gem "aws-sdk"
 gem 'faker', '1.1.2'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'acts_as_votable', '~> 0.7.1'
 
 group :production do
 	gem 'pg'

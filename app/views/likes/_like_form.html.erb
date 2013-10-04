@@ -1,0 +1,2 @@
+<%= link_to 'Like', likes_path(pin_id: pin.id), method: :post, remote: true %>
+<%= " " + pin.likes_count.to_s %>

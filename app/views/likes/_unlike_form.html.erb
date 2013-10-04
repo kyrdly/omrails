@@ -1,0 +1,2 @@
+<%= link_to 'Unlike', like_path(current_user.like_for(pin)), method: :delete, remote: true %>
+<%= " " + pin.likes_count.to_s %>

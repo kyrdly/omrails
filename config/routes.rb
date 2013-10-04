@@ -1,7 +1,10 @@
 Omrails::Application.routes.draw do
+
+
   get "users/show"
 
   resources :pins
+  resources :likes, only: [:create, :destroy]
 
   devise_for :users
   match 'users/:id' => 'users#show', as: :user
@@ -9,6 +12,8 @@ Omrails::Application.routes.draw do
   get 'about' => 'pages#about'
 
   root :to => 'pins#index'
+
+  #get 'pins/:id/like', :to => "pins#like", :as => 'like_pin'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -24,12 +29,13 @@ Omrails::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
+  # resources :pins do
+  #    member do
+  #      get 'upvote'
+  #    end
+  #  end
+
+
   #
   #     collection do
   #       get 'sold'
@@ -66,4 +72,4 @@ Omrails::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-end
+ end

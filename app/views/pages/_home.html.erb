@@ -1,13 +1,6 @@
 <% unless user_signed_in? %>
-	<div class="hero-unit">
-		<h1>Welcome to yupp,</h1>
-		<p>
-			&nbsp&nbsp a place where the best 
-			<%= link_to "ideas", "http://bit.ly/crD8zA" %>
-			grow.
-		</p>
-		<p>
-			<%= link_to "Give it a try!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", new_user_registration_path, class: "btn btn-primary btn-large" %>
+	<div class="classic-header">
+		<h1>Welcome to yupp, <%= link_to "Give it a try", new_user_registration_path, class: "btn btn-primary btn-medium" %></h1>
 		</p>
 	</div>
 <% end %>

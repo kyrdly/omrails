@@ -8,10 +8,22 @@
 			Posted by <%= link_to pin.user.name, pin.user %>
 		</strong>
 	</p>
+
 	<% if current_user == pin.user %>
 		<p>
 		  <%= link_to 'Edit', edit_pin_path(pin) %>
 		  <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
 		</p>
 	<% end %>
+	<div>
+		<div id=<%= "pin_" + pin.id.to_s %> >
+			<% if user_signed_in? && current_user != pin.user %>
+			  <% if current_user.does_like?(pin) %>
+					<%= render "/likes/unlike_form", pin: pin %>
+			  <% else %>
+					<%= render "/likes/like_form", pin: pin %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
 </div>

@@ -18,4 +18,13 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :pins, :dependent => :destroy
+  has_many :likes, dependent: :destroy
+
+  def does_like?(pin)
+    likes.where(pin_id: pin.id).exists?
+  end
+
+  def like_for(pin)
+    likes.where(pin_id: pin.id).first
+  end
 end

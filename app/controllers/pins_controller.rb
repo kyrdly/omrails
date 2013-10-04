@@ -4,7 +4,7 @@ class PinsController < ApplicationController
   # GET /pins
   # GET /pins.json
   def index
-    @pins = Pin.order("created_at desc").page(params[:page]).per_page(20)
+    @pins = Pin.order("likes_count desc").page(params[:page]).per_page(20)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,6 +12,7 @@ class PinsController < ApplicationController
       format.js
     end
   end
+
 
   # GET /pins/1
   # GET /pins/1.json
@@ -84,3 +85,9 @@ class PinsController < ApplicationController
     end
   end
 end
+
+  # Upvote 
+
+
+
+
